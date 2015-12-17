@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Event Flow</title>
+    <style media="screen">
+      * {
+        border: 1px solid green;
+      }
+      ul, li {
+        padding: 10px;
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    Outside the entire list.
+    <ul>
+      Inside the &lt;ul&gt; not the &lt;li&gt;.
+      <li>
+        Inside the &lt;li&gt;, not a link.
+      <a href="page2.html">I'm a link, inside an &lt;li&gt; element</a>
+      </li>
+    </ul>
+    <script type="text/javascript">
+      // var elem = document.getElementsByTagName("ul")[0]; //get array of all tags, store the first one
+      // elem.addEventListener("click", function() {
+      //   console.log(event.target);
+      // });
+
+      // document.getElementsByTagName("ul")[0]
+      // .addEventListener("click", sayHi, false);
+      document.getElementsByTagName("a")[0]
+      .addEventListener("click", function (e) {
+        console.log("You clicked on a link, hah!");
+        e.preventDefault();
+      }, false);
+
+      // This is a comment about what the function does.
+      /**
+      * This function says 'Hi',
+      * it logs the event.target and then the string 'Hi'
+      */
+      function sayHi() {
+          console.log(event.target);
+          console.log("Hi");
+      }
+
+      document.addEventListener("DOMContentLoaded", sayHi, false);
+    </script>
+  </body>
+</html>

@@ -2,6 +2,7 @@
 
   ## Objects are collections key-value pairs
 
+  Objects group data and the functions that act on that data.
   - Objects are very similar to Python dictionaries
   - Keys can be either **properties**(data) or **methods**(functions)
   - Keys can be any valid Javascript data type, including another object
@@ -32,12 +33,20 @@ guido["name"] = "Guido van Rossum";
 guido.age = 59;
 console.log("The guido object is: ", guido);
 ```
+The dot notation is easier to read and debug (and less typing), so it should be your first choice. However, if you need to access a property dynamically, using a value that can change, the bracket notation will accept a string variable:
+
+```javascript
+var propertyIWant = "name";
+console.log("guido's name is: ", guido[propertyIWant]);
+```
+
   #### Reading object properties
 ```javascript
 // access properties with bracket notation or dot notation
 console.log("guido's name is: ", guido.name);
-console.log("guido's age is: ", guido["age"]);
+console.log("guido's age is: ", guido["age"])
 ```
+Again, use dot notation if possible.
   #### Changing object properties
 ```javascript
 // you can dynamically add and remove properties

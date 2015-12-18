@@ -1,13 +1,13 @@
 # Objects in Javascript
 
-  ## Objects are collections key-value pairs
+## Objects are collections key-value pairs
 
   Objects group data and the functions that act on that data.
   - Objects are very similar to Python dictionaries
   - Keys can be either **properties**(data) or **methods**(functions)
   - Keys can be any valid Javascript data type, including another object
 
-  #### Creating an object with object literal notation
+#### Creating an object with object literal notation
 
 ```javascript
 //hard-coded object, comma-separated key-value pairs
@@ -19,7 +19,7 @@ var person = {
 };
 ```
 
-  #### Creating an empty object and adding properties
+#### Creating an empty object and adding properties
 
 ```javascript
 // invoking the built-in Object constructor creates an empty Object
@@ -40,14 +40,14 @@ var propertyIWant = "name";
 console.log("guido's name is: ", guido[propertyIWant]);
 ```
 
-  #### Reading object properties
+#### Reading object properties
 ```javascript
 // access properties with bracket notation or dot notation
 console.log("guido's name is: ", guido.name);
 console.log("guido's age is: ", guido["age"])
 ```
 Again, use dot notation if possible.
-  #### Changing object properties
+#### Changing object properties
 ```javascript
 // you can dynamically add and remove properties
 guido.nickname = "Benevolent Dictator For Life";
@@ -56,7 +56,7 @@ delete guido.age;
 console.log("guido's age is now: ", guido["age"]);
 console.log("guido.blah: ", guido.blah);
 ```
-  #### Creating an Object with constructor notation
+#### Creating an Object with constructor notation
 ```javascript
 // constructor notation
 // usually constructor names are capitalized
@@ -78,7 +78,7 @@ var r2d2 = new Person("R2D2");
 **WARNING**: Don't forget the 'new' keyword. If you don't include the 'new', the constructor will attach the properties to the global object (window).
 This is why some developers prefer using '{}' instead of 'new' for creating empty objects.
 
-  #### An aside about 'this'
+#### An aside about 'this'
 ```javascript
 // at the global level, 'this' points to the Window object
 console.log("this: ", this);
@@ -96,9 +96,9 @@ function Thing() {
 }
 ```
 
-  ### More on Objects
+### More on Objects
 
-  #### Objects within objects
+#### Objects within objects
 
   An object property can be another object.
   ```javascript
@@ -112,15 +112,15 @@ function Thing() {
       var favoriteFood = info.favorites.food; // gets "ice cream"
   ```
 
-  #### Built-in objects
+#### Built-in objects
 
-  ##### The BOM
+##### The BOM
   The browser implements the Browser Object Model, which includes built-in objects like `window`, `document`, and `screen`.
 
-  ##### The DOM
+##### The DOM
   The Document Object Model is the browser's model of the current page. The root is `document`.
 
-  ##### Global Javascript Objects
+##### Global Javascript Objects
   `String`, `Number`, `Boolean`,
   `Date`, `Math`, `Regex`,
   `Object`

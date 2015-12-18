@@ -51,9 +51,12 @@ var darth = new Person("Darth Vader", "dead", "Sith Soda");
 var r2d2 = new Person("R2D2");
 
 // at the global level, 'this' points to the Window object
-// console.log("global 'this': ", this);
+console.log("global 'this': ", this);
 // all global variables and objects exist on Window
 
+/* This function does a thing.
+* It doesn't return anything.
+*/
 function Thing() {
     "use strict";
     console.log("Inside the constructor, this is: ", this); // logs Thing()

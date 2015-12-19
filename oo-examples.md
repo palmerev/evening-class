@@ -55,7 +55,7 @@ function Book(title, author, pages) {
     }
 }
 ```
-**Note**: The constructor is only a template and doesn't actually hold any data itself. It is a special kind of function that when called with the keyword `new` creates a new object and returns it to you. Except in some more advanced cases, the only time you should reference the constructor directly is when creating a new object:
+**Note**: The constructor is only a _template_ and doesn't actually hold any data itself. It is a special kind of function that when called with the keyword `new` creates a new object and returns it to you. Except in some more advanced cases, the only time you should reference the constructor directly is when creating a new object:
 
 ```javascript
 var book1 = new Book("Harry Potter", "JK Rowling", 350);`.

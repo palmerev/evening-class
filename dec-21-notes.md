@@ -9,7 +9,12 @@ When creating an object or constructor, consider two things:
   - It sometimes helps to think about how you would **call** a method.
   _Think about how you want to interact with the object_ when you call a method and work backwards to the definition.
 
-  **Bank account example:**
+  **Bank Account example:**
+  ```javascript
+
+  ```
+
+  **Timer example:**
   ```javascript
 
   ```

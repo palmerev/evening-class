@@ -62,3 +62,8 @@ var book1 = new Book("Harry Potter", "JK Rowling", 350);`.
 ```
 
 Now `book1` is a `Book` object, so you can access it's properties like `book1.title`. You probably won't need to reference the constructor. It's not an object, so it doesn't have state.
+
+The cookie cutter analogy works fairly well:
+- The constructor is a cookie cutter, not a cookie
+- To get a "cookie", use `var cookie = new ConstructorName()`
+This is asking the browser to allocate some cookie dough (memory) to the constructor and return as fresh-baked cookie.

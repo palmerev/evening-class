@@ -1,6 +1,6 @@
 # December 22nd Notes
 
-## Form Basics
+## HTTP Basics
 
 
 ## Event Handlers vs. Event Listeners
@@ -51,13 +51,6 @@ function init() {
 
 document.addEventListener('DOMContentLoaded', init, false);
 ```
-## Wrapper Objects
-_they do weird things_
-
-Avoid 'new-ing' built-in objects as wrappers around primitive types.
-prefer
-
-
 
 ## Code Organization
 _code is more often read than written. Write code for humans._
@@ -119,3 +112,9 @@ function init() {
 // wait for the initial DOM to load, but not other resources
 document.addEventListener('DOMContentLoaded', init, false);
 ```
+
+## Scope, 'this', and Globals
+Avoid global variables whenever possible
+
+
+**OO Version**

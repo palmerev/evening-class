@@ -1,6 +1,5 @@
 # December 22nd Notes
 
-## HTTP Basics
 
 
 ## Event Handlers vs. Event Listeners
@@ -118,3 +117,66 @@ Avoid global variables whenever possible
 
 
 **OO Version**
+How can we make our code more encapsulated and secure?
+- object literals as namespaces
+- pass all required data to as parameters to functions as needed, no globals
+- IIFE / module pattern
+```javascript
+
+/**
+* initialize global variables and set up event listeners
+* @return {undefined}
+*/
+function init() {
+  var clickCounter = document.getElementById('click-count');
+  var counter = {
+    limit: 100,
+    value: 0,
+    /**
+    * increment the value of the counter by one until it reaches the limit,
+    * then restart at zero.
+    */
+    increment: function () {
+      if (this.value < this.limit) {
+        this.value += 1;
+      }
+      else {
+        this.reset();
+      }
+    },
+    /**
+    * decrement the value of the counter by one until it reaches zero.
+    */
+    decrement: function () {
+      if (this.value > 0) {
+        this.value -= 1;
+      }
+      else { return; }
+    }
+    /**
+    * reset the value of the counter to zero.
+    */
+    reset: function () {
+      this.value = 0;
+    }
+  }
+
+  // assuming there's only one button on the page, or we only want the first one
+  document.getElementsByTagName('button')[0].addEventListener('click', function () {
+      counter.increment();
+  }, false);
+  updateDisplay(counter);
+}
+
+// wait for the initial DOM to load, but not other resources
+document.addEventListener('DOMContentLoaded', init, false);
+
+```
+
+## HTTP Basics
+
+- request / response cycle
+- message format
+- GET, POST, PUT, DELETE
+- GET vs POST
+- examining network traffic

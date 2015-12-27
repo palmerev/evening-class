@@ -123,7 +123,7 @@ How can we make our code more encapsulated and secure?
 - IIFE / module pattern
 ```javascript
 
-/**
+/*
 * initialize global variables and set up event listeners
 * @return {undefined}
 */
@@ -144,7 +144,7 @@ function init() {
         this.reset();
       }
     },
-    /**
+    /*
     * decrement the value of the counter by one until it reaches zero.
     */
     decrement: function () {
@@ -153,7 +153,7 @@ function init() {
       }
       else { return; }
     }
-    /**
+    /*
     * reset the value of the counter to zero.
     */
     reset: function () {
@@ -175,8 +175,10 @@ document.addEventListener('DOMContentLoaded', init, false);
 
 ## HTTP Basics
 
-- request / response cycle
+- client / server request / response cycle
 - message format
 - GET, POST, PUT, DELETE
 - GET vs POST
 - examining network traffic
+
+[HTTP Basics](https://dev.opera.com/articles/http-basic-introduction/)

@@ -176,10 +176,12 @@ document.addEventListener('DOMContentLoaded', init, false);
 ## HTTP Basics
 
 - client / server request / response cycle
-- message format
+- status + header + content format
+- XML + JSON
 - GET, POST, PUT, DELETE
 - GET vs POST
 - examining network traffic
 - APIs?
+-AJAX
 
 [HTTP Basics](https://dev.opera.com/articles/http-basic-introduction/)

@@ -180,5 +180,6 @@ document.addEventListener('DOMContentLoaded', init, false);
 - GET, POST, PUT, DELETE
 - GET vs POST
 - examining network traffic
+- APIs?
 
 [HTTP Basics](https://dev.opera.com/articles/http-basic-introduction/)

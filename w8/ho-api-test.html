@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hack Oregon API Test</title>
+  </head>
+  <body>
+    <h1>Check out the console.</h1>
+    <h2 id="county-name"></h2>
+    <p id="output">
+    </p>
+    <button id="btn" type="button" name="button">Get Data</button>
+    <script type="text/javascript">
+
+      function showData() {
+        console.log(this.responseText);
+        // turn the response text into a javascript object
+        var dataObject = JSON.parse(this.responseText);
+        var countyHeading = document.getElementById("county-name");
+        // pull a single county name out of the array of objects
+        countyHeading.innerText = "My favorite county is " + dataObject.data[2].name + " county";
+        countyHeading.innerText += ", with a fips code of " + dataObject.data[2].fips;
+      }
+
+      function makeXHR(event) {
+      console.log("making AJAX GET request...");
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://raiseeffect.org/api/v1/counties");
+        request.addEventListener("load", showData, false);
+        request.send();
+      }
+
+      function init() {
+        var button = document.getElementById("btn");
+        button.addEventListener("click", makeXHR, false);
+      }
+
+      document.addEventListener("DOMContentLoaded", init, false);
+    </script>
+  </body>
+</html>

@@ -52,19 +52,19 @@ document.addEventListener('DOMContentLoaded', init, false);
 ```
 
 ## Code Organization
-_code is more often read than written. Write code for humans._
+_Code is more often read than written. Write code for humans._
 ```javascript
 // variables to set a limit and a counter, initialized in the init function
 var globalLimit,
     counterVar;
-/**
+/*
 * update the output element on the page to match the number of clicks tracked
 * by counterVar.
 * @param {resultElem} The element where the number of clicks will be displayed
 * @return {undefined}
 */
 function updateDisplay(resultElem) {
-  // resultElem.innerText = counterVar;
+  resultElem.innerText = counterVar;
 
 // EXAMPLE: another way, without global counter
 //   if (resultElem.innerText === '') {
@@ -73,9 +73,9 @@ function updateDisplay(resultElem) {
 //   else {
 //     resultElem.innerText = Number(resultElem.innerText) + 1;
 //   }
-// }
+}
 
-/**
+/*
 * increment a global counter variable by one up to a global limit,
 * or reset it to zero if it reaches the global limit, then call updateDisplay.
 * @param {counterOutput}
@@ -91,7 +91,7 @@ function incrementCounter(counterOutput) {
   updateDisplay(counterOutput);
 }
 
-/**
+/*
 * initialize global variables and set up event listeners
 * @return {undefined}
 */
@@ -113,16 +113,19 @@ document.addEventListener('DOMContentLoaded', init, false);
 ```
 
 ## Scope, 'this', and Globals
-Avoid global variables whenever possible
+_Avoid global variables whenever possible._
+
+If a name is defined more than once, the most recent definition overrides the previous one.
 
 
 **OO Version**
+
 How can we make our code more encapsulated and secure?
 - object literals as namespaces
-- pass all required data to as parameters to functions as needed, no globals
+- pass all data your code needs as parameters to functions as needed, no globals
 - IIFE / module pattern
-```javascript
 
+```javascript
 /*
 * initialize global variables and set up event listeners
 * @return {undefined}
@@ -132,7 +135,7 @@ function init() {
   var counter = {
     limit: 100,
     value: 0,
-    /**
+    /*
     * increment the value of the counter by one until it reaches the limit,
     * then restart at zero.
     */
@@ -177,7 +180,7 @@ document.addEventListener('DOMContentLoaded', init, false);
 
 - client / server request / response cycle
 - status + header + content format
-- XML + JSON
+- responses that return XML / JSON
 - GET, POST, PUT, DELETE
 - GET vs POST
 - examining network traffic
